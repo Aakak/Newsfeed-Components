@@ -75,3 +75,6 @@ menuButton.addEventListener("click", event => {
 
 // Step 6: add the menu component to the DOM.
 document.querySelector(".header").append(menu);
+
+// Stretch
+TweenMax.to(".menu-button", 4, { rotationX: 360 });

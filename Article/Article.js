@@ -187,7 +187,6 @@ const articleCreate = siteContent => {
 
   const h2 = document.createElement("h2");
   h2.textContent = siteContent.title;
-
   const date = document.createElement("p");
   date.classList.add("date");
   date.textContent = siteContent.date;
@@ -197,9 +196,9 @@ const articleCreate = siteContent => {
   const span = document.createElement("span");
   span.classList.add("expandButton");
   span.textContent = "Read More";
-  span.style.fontSize = "1.3rem";
-  span.style.border = "2px solid pink";
-  span.style.color = "green";
+  span.style.fontSize = "1.2rem";
+  span.style.border = "2px solid slateblue";
+  span.style.color = "grey";
   span.style.marginBottom = "5px";
   span.addEventListener("click", event => {
     event.preventDefault();
@@ -233,3 +232,21 @@ const articleDiv = document.querySelector(".articles");
 const siteContent = data.map(content => {
   return articleDiv.append(articleCreate(content));
 });
+
+// ### Stretch Goals
+
+TweenMax.from("h2", 0.5, {
+  opacity: 0,
+  scale: 0,
+  ease: Bounce.easeOut
+});
+
+TweenMax.staggerFrom(
+  "p",
+  1.5,
+  {
+    opacity: 0,
+    y: 200
+  },
+  0.1
+);
